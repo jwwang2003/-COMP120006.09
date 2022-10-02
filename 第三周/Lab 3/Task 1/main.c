@@ -13,10 +13,12 @@ struct Cell1 {
   float x;
   float y;
 };
+typedef struct Cell1 Cell1;
 
 struct Cell2 {
   float z, m;
 };
+typedef struct Cell2 Cell2;
 
 int main(void) {
   Cell1 cell1;

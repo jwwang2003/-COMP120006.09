@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdbool.h>
 
 void printGrid(int x, int y, int dX, int dY, bool grid[][10]) {
   for(int r = 0; r < 10; ++r) {
@@ -22,7 +23,7 @@ int main(void) {
 
   bool grid[10][10] = { 0 };
   
-  for(int i = y; i <= y + dY; ++i) {
+  for(int i = y; i < y + dY; ++i) {
     grid[i][x] = 1;
   }
 
