@@ -1,6 +1,10 @@
 {
   "files.associations": {
     "*.json": "jsonc",
-    "__node_handle": "c"
+    "__node_handle": "c",
+    "chrono": "c",
+    "limits": "c",
+    "algorithm": "c",
+    "string.h": "c"
   }
 }
