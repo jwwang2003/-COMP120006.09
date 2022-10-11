@@ -11,6 +11,9 @@ int main(void) {
     scanf("%d %d", &v[i], &t[i]);
   }
 
+  int T;
+  scanf("%d", &T);
+
   int temp[10001];
   // for(int i = 0; i < n; ++i) {
   //   printf("%f\n", (4.5/v[i])*3600.0 + t[i]);

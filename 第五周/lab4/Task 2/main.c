@@ -6,6 +6,8 @@
 int checkOverlap(double Xc, double Yc, double R, double X1, double Y1, double X2, double Y2);
 
 int main(void) {
+
+  // simluation?
   time_t T;
   srandom((unsigned) time(&T));
 
@@ -48,8 +50,13 @@ int main(void) {
     // printf("%d\n", sum);
   }
 
-  printf("%d %d %d %d\n", c1, c2, c3, c4);
-  printf("%lf %lf %lf %lf", (c1/(double)tot)*100, (c2/(double)tot)*100, (c3/(double)tot)*100, (c4/(double)tot)*100);
+  // printf("%d %d %d %d\n", c1, c2, c3, c4);
+  // printf("%lf %lf %lf %lf", (c1/(double)tot)*100, (c2/(double)tot)*100, (c3/(double)tot)*100, (c4/(double)tot)*100);
+
+  printf("Probability of covering 1 block = %f%%\n", (c1/(double)tot)*100);
+  printf("Probability of covering 2 block = %f%%\n", (c2/(double)tot)*100);
+  printf("Probability of covering 3 block = %f%%\n", (c3/(double)tot)*100);
+  printf("Probability of covering 4 block = %f%%\n", (c4/(double)tot)*100);
 
   // for(int i = 0; i < 10000; ++i) {
   //   double randX = (double)rand()/(double)(RAND_MAX/((n + 2) * (t/n))) - 1;

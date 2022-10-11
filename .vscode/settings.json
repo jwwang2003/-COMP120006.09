@@ -5,6 +5,10 @@
     "chrono": "c",
     "limits": "c",
     "algorithm": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "complex": "c",
+    "ratio": "c",
+    "stdio.h": "c",
+    "type_traits": "c"
   }
 }
