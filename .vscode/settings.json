@@ -9,6 +9,8 @@
     "complex": "c",
     "ratio": "c",
     "stdio.h": "c",
-    "type_traits": "c"
+    "type_traits": "c",
+    "__tuple": "c",
+    "array": "c"
   }
 }
