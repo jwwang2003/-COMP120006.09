@@ -42,15 +42,6 @@
       allowLocationSimulation = "YES"
       viewDebuggingEnabled = "No"
       consoleMode = "1">
-      <PreActions>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;sascript -e &apos;tell application &quot;Terminal&quot;&apos; -e &apos;delay 0.5&apos; -e &apos;activate&apos; -e &quot;do script (\&quot;$TARGET_BUILD_DIR/$PRODUCT_NAME\&quot;)&quot; -e &apos;end tell&apos; &amp;&#10;">
-            </ActionContent>
-         </ExecutionAction>
-      </PreActions>
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference

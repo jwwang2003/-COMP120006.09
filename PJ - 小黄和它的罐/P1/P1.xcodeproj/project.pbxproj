@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		AC002A0228FC6EE9002E3F7D /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AC002A0128FC6EE9002E3F7D /* libncurses.tbd */; };
 		ACA156B128FC71710000E1F1 /* map.c in Sources */ = {isa = PBXBuildFile; fileRef = ACA156B028FC71710000E1F1 /* map.c */; };
+		ACB5FCE429047FE60074E407 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = ACB5FCE329047FE60074E407 /* game.c */; };
+		ACB5FCE7290480820074E407 /* player.c in Sources */ = {isa = PBXBuildFile; fileRef = ACB5FCE6290480820074E407 /* player.c */; };
+		ACB5FCEA2904969D0074E407 /* command.c in Sources */ = {isa = PBXBuildFile; fileRef = ACB5FCE92904969D0074E407 /* command.c */; };
 		ACE4E67128FC6A7400EFCD2A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = ACE4E67028FC6A7400EFCD2A /* main.c */; };
+		ACEF783D2903C35B00AEB7B6 /* window.c in Sources */ = {isa = PBXBuildFile; fileRef = ACEF783C2903C35B00AEB7B6 /* window.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,8 +32,16 @@
 		AC002A0128FC6EE9002E3F7D /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
 		ACA156AF28FC71710000E1F1 /* map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
 		ACA156B028FC71710000E1F1 /* map.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = map.c; sourceTree = "<group>"; };
+		ACB5FCE229047FE60074E407 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		ACB5FCE329047FE60074E407 /* game.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
+		ACB5FCE5290480820074E407 /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		ACB5FCE6290480820074E407 /* player.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = player.c; sourceTree = "<group>"; };
+		ACB5FCE82904969D0074E407 /* command.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = command.h; sourceTree = "<group>"; };
+		ACB5FCE92904969D0074E407 /* command.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = command.c; sourceTree = "<group>"; };
 		ACE4E66D28FC6A7400EFCD2A /* P1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = P1; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE4E67028FC6A7400EFCD2A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		ACEF783B2903C35B00AEB7B6 /* window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
+		ACEF783C2903C35B00AEB7B6 /* window.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = window.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,14 @@
 				ACE4E67028FC6A7400EFCD2A /* main.c */,
 				ACA156AF28FC71710000E1F1 /* map.h */,
 				ACA156B028FC71710000E1F1 /* map.c */,
+				ACEF783B2903C35B00AEB7B6 /* window.h */,
+				ACEF783C2903C35B00AEB7B6 /* window.c */,
+				ACB5FCE229047FE60074E407 /* game.h */,
+				ACB5FCE329047FE60074E407 /* game.c */,
+				ACB5FCE5290480820074E407 /* player.h */,
+				ACB5FCE6290480820074E407 /* player.c */,
+				ACB5FCE82904969D0074E407 /* command.h */,
+				ACB5FCE92904969D0074E407 /* command.c */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -136,7 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACEF783D2903C35B00AEB7B6 /* window.c in Sources */,
+				ACB5FCE429047FE60074E407 /* game.c in Sources */,
 				ACA156B128FC71710000E1F1 /* map.c in Sources */,
+				ACB5FCEA2904969D0074E407 /* command.c in Sources */,
+				ACB5FCE7290480820074E407 /* player.c in Sources */,
 				ACE4E67128FC6A7400EFCD2A /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
