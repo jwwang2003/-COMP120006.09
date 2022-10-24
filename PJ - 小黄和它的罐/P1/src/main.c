@@ -26,7 +26,7 @@ char INSTRUCTION_MSGS[6][30] = {
     "Action:",
     "E - Pick up | R - Random",
     "F - Stay/Skip | G - Exit",
-    "[KEY] to ack",
+    "[A] to ack",
 };
 
 int main(void) {
