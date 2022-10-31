@@ -11,6 +11,7 @@
     "stdio.h": "c",
     "type_traits": "c",
     "__tuple": "c",
-    "array": "c"
+    "array": "c",
+    "sstream": "c"
   }
 }
