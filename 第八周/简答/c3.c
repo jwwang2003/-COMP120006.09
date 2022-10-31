@@ -1,55 +1,86 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<string.h>
 
-void read(int size, int **matrix) {
-    for(int i = 0; i < size; ++i) {
-        matrix[i] = malloc(size * sizeof(*matrix[i]));
-        for(int j = 0; j < size; ++j) {
-            if(i == 0 && j == 0) scanf("\n%d", &matrix[i][j]);
-            else scanf("%d", &matrix[i][j]);
-        }
+int check(char g[3][3], char p, int y, int x) {
+    int r = 0;
+    int c = 0;
+    int d1 = 0;
+    int d2 = 0;
+    for(int i = x; i < 3; ++i) {
+        if(g[y][i] == p) r++;
+        else break;
     }
+    for(int i = x - 1; i >= 0; --i) {
+        if(g[y][i] == p) r++;
+        else break;
+    }
+    for(int i = y; i < 3; ++i) {
+        if(g[i][x] == p) c++;
+        else break;
+    }
+    for(int i = y - 1; i >= 0; --i) {
+        if(g[i][x] == p) c++;
+        else break;
+    }
+
+    for(int i = 0; i < 3; ++i) {
+        if(g[i][i] == p) d1++;
+        else break;
+    }
+    for(int i = 0; i < 3; ++i) {
+        if(g[i][2-i] == p) d2++;
+        else break;
+    }
+    return r == 3 || c == 3 || d1 == 3 || d2 == 3;
 }
 
 int main(void) {
-    int n, m;
+    char grid[3][3];
+    memset(grid, ' ', sizeof(grid));
 
-    scanf("%d %d", &n, &m);
+    int turn = 1;
 
-    int **m1, **m2;
-
-    m1 = malloc(n * sizeof(*m1));
-    read(n, m1);
-
-    m2 = malloc(m * sizeof(*m2));
-    read(m, m2);
-
-    // for(int i = 0; i < n; ++i) {
-    //     for(int j = 0; j < n; ++j) {
-    //         printf("%d ", m1[i][j]);
-    //     }
-    //     printf("\n");
-    // }
-    // for(int i = 0; i < m; ++i) {
-    //     for(int j = 0; j < m; ++j) {
-    //         printf("%d ", m2[i][j]);
-    //     }
-    //     printf("\n");
-    // }
-    // int **final;
-    // final = malloc((n - m + 1) * sizeof(*final));
-
-    for(int i = 0; i < (n - m + 1); ++i) {
-        for(int j = 0; j < (n - m + 1); ++j) {
-            int sum = 0;
-            for(int k = 0; k < m; ++k) {
-                for(int p = 0; p < m; ++p) {
-                    sum += m1[i + k][j + p] * m2[k][p];
-                }
-            }
-            printf("%d ", sum);
-        }
+    for(int i = 0; i < 13; ++i) printf("-");
+    printf("\n");
+    for(int i = 0; i < 3; ++i) {
+        printf("| %c | %c | %c |\n", grid[i][0], grid[i][1], grid[i][2]);
+        for(int i = 0; i < 13; ++i) printf("-");
         printf("\n");
+    }
+    
+    while(1) {
+        int r, c;
+
+        do {
+            printf("Enter a row (0, 1 , or 2) for player ");
+            if(turn) printf("X: ");
+            else printf("O: ");
+            scanf("%d", &r);
+        } while (!(r >= 0 && r < 3));
+
+        do {
+            printf("Enter a column (0, 1, or 2) for player ");
+            if(turn) printf("X: ");
+            else printf("O: ");
+            scanf("%d", &c);
+        } while (!(c >= 0 && c < 3));
+
+        grid[r][c] = turn ? 'X' : 'O';
+
+        for(int i = 0; i < 13; ++i) printf("-");
+        printf("\n");
+        for(int i = 0; i < 3; ++i) {
+            printf("| %c | %c | %c |\n", grid[i][0], grid[i][1], grid[i][2]);
+            for(int i = 0; i < 13; ++i) printf("-");
+            printf("\n");
+        }
+
+        if(check(grid, turn ? 'X' : 'O', r, c)) {
+            printf("Player %c won\n", turn ? 'X' : 'O');
+            break;
+        }
+
+        turn = !turn;
     }
 
     return 0;
