@@ -2,12 +2,20 @@
 //  game.c
 //  P1
 //
-//  Created by Jun Wei Wang on 2022-11-01.
+//  Created by Jun Wei Wang on 2022-10-22.
 //
 
-// REFACTORED!
-
 #include "game.h"
+
+char actionName[7][35] = {
+    "Random move",
+    "Moved up!",
+    "Moved down!",
+    "Moved left!",
+    "Moved right!",
+    "Skipped move!",
+    "Attempt pick up jar!"
+};
 
 void append(char* s, char c) {
     int len = (int)strlen(s);

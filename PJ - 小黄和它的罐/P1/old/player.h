@@ -2,18 +2,14 @@
 //  player.h
 //  P1
 //
-//  Created by Jun Wei Wang on 2022-11-01.
+//  Created by Jun Wei Wang on 2022-10-22.
 //
-
-// REFACTORED!
 
 #ifndef player_h
 #define player_h
 
 #include <stdlib.h>
 #include <stdio.h>
-
-#include "constants.h"
 #include "map.h"
 
 typedef struct {

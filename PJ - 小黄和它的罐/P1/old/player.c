@@ -2,10 +2,8 @@
 //  player.c
 //  P1
 //
-//  Created by Jun Wei Wang on 2022-11-01.
+//  Created by Jun Wei Wang on 2022-10-22.
 //
-
-// REFACTORED!
 
 #include "player.h"
 
@@ -15,8 +13,8 @@ void initPlayer(Player *p) {
 }
 
 // return 0 if player exceeds wall bounds, aka hits a wall
-int movePlayer(Map *m, Player *p, const int d[2]) {
-    if(boundCheck(p->y + d[0], p->x + d[1])) {
+int movePlayer(Map *m, Player *p, int d[2]) {
+    if(boundCheck(m, p->y + d[0], p->x + d[1])) {
         // new coordinates is within bounds
         p->y += d[0];
         p->x += d[1];
@@ -47,23 +45,23 @@ int movePlayerRandom(Map *m, Player *p) {
 }
 
 int movePlayerUp(Map *m, Player *p) {
-//    int d[2] = {-1, 0};
-    return movePlayer(m, p, pDisplacement[0]);
+    int d[2] = {-1, 0};
+    return movePlayer(m, p, d);
 }
 
 int movePlayerDown(Map *m, Player *p) {
-//    int d[2] = {1, 0};
-    return movePlayer(m, p, pDisplacement[1]);
-}
-
-int movePlayerLeft(Map *m, Player *p) {
-//    int d[2] = {0, -1};
-    return movePlayer(m, p, pDisplacement[2]);
+    int d[2] = {1, 0};
+    return movePlayer(m, p, d);
 }
 
 int movePlayerRight(Map *m, Player *p) {
-//    int d[2] = {0, 1};
-    return movePlayer(m, p, pDisplacement[3]);
+    int d[2] = {0, 1};
+    return movePlayer(m, p, d);
+}
+
+int movePlayerLeft(Map *m, Player *p) {
+    int d[2] = {0, -1};
+    return movePlayer(m, p, d);
 }
 
 // checks if the current node has jar before making a move

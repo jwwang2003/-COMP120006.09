@@ -2,24 +2,20 @@
 //  window.h
 //  P1
 //
-//  Created by Jun Wei Wang on 2022-11-01.
+//  Created by Jun Wei Wang on 2022-10-21.
 //
-
-// REFACTORED!
 
 #ifndef window_h
 #define window_h
 
 #include <stdio.h>
-
-#include "constants.h"
 #include "map.h"
 #include "player.h"
 #include "game.h"
 
 void initWindow(void);
-void splashScreenMsg(int num, const char c[][STRLEN]);
+void splashScreenMsg(int h, int w, int num, char c[][30]);
 void updateWindow(Game *game, Map *map, Player *player);
-void showGameOver(int len, const char c[STRLEN]);
+void showGameOver(int h, int w, int len, char *c);
 
 #endif /* window_h */

@@ -2,12 +2,11 @@
 //  command.c
 //  P1
 //
-//  Created by Jun Wei Wang on 2022-11-01.
+//  Created by Jun Wei Wang on 2022-10-22.
 //
 
-// REFACTORED!
-
 #include "command.h"
+//                strcpy(game->hint1, "Moved down!");
 
 int getUserInput(void) {
     int ch = getch();
@@ -30,8 +29,8 @@ int getUserInput(void) {
                 return 7;
             case 'r':
                 return 1;
-            case 'g':       // end game key stroke
-                return -1;  // flag for game end signal
+            case 'g':
+                return -1;
             default:
                 return 8;   // indicates invalid input
         }

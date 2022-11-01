@@ -2,10 +2,8 @@
 //  game.h
 //  P1
 //
-//  Created by Jun Wei Wang on 2022-11-01.
+//  Created by Jun Wei Wang on 2022-10-22.
 //
-
-// REFACTORED!
 
 #ifndef game_h
 #define game_h
@@ -15,7 +13,6 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "constants.h"
 #include "player.h"
 #include "map.h"
 #include "command.h"
@@ -23,8 +20,8 @@
 typedef struct {
     int score;
     int moves;
-    char hint1[STRLEN];
-    char hint2[STRLEN];
+    char hint1[50];
+    char hint2[50];
 } Game;
 
 void initGame(Game *game);
