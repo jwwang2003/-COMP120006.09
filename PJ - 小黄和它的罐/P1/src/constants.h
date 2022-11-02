@@ -14,9 +14,10 @@
 
 #define STRLEN 100   // set each string to 100 characters, should be plenty
 
-extern const char WELCOME_MSG[2][STRLEN];
+extern const char WELCOME_MSGS[2][STRLEN];
 extern const char GAMEOVER_MSG[STRLEN];
 extern const char INSTRUCTION_MSGS[6][STRLEN];
+extern const char GAME_MSGS[6][STRLEN];
 
 // inner walls are also contained in the grid
 // therefore the grid must be 2 units more on
@@ -25,7 +26,6 @@ extern const char INSTRUCTION_MSGS[6][STRLEN];
 #define MAP_W 22
 
 #define WALL_THICKNESS 1
-#define JAR_CHANCE 50
 
 // player displacement coordinates
 extern const int pDisplacement[4][2];

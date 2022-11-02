@@ -17,13 +17,14 @@
 
 typedef struct {
     int **grid;     // grid representing the map; 0 = empty, 1 = JARed
+    int numJars;
 //    int height;          // height of grid (y axis)
 //    int width;          // width of grid (x axis)
 } Map;
 
 int randomInt(int a, int b);
 int shouldJar(void);
-void createMap(Map *map);
+Map *createMap(void);
 int getNode(Map *map, int y, int x);
 int boundCheck(int playerY, int playerX);
 

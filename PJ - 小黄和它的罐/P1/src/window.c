@@ -41,7 +41,7 @@ void drawCenteredText(char c[STRLEN]) {
     mvprintw(MAP_H / 2, (windowWidth - len) / 2, c);
 }
 
-void drawCenteredText_2d(int num, char c[][STRLEN]) {
+void drawCenteredText_2d(int num, const char c[][STRLEN]) {
     int windowWidth = MAP_W * 2;
     
     for(int i = 0; i < num; ++i) {
@@ -96,6 +96,8 @@ void updateWindow(Game *game, Map *map, Player *player) {
     mvprintw(MAP_H, hLen, "Score:   %d", game->score);
     mvprintw(MAP_H + 1, 0, "%s", game->hint2);
     mvprintw(MAP_H + 1, hLen, "# moves: %d", game->moves);
+    mvprintw(MAP_H + 2, hLen, "Jars collected: %d", game->jarsPicked);
+    mvprintw(MAP_H + 3, hLen, "Jars stat: %d/%d (%d)", map->numJars - game->jarsPicked, (MAP_H - 2)*(MAP_W - 2), map->numJars);
     
     move(MAP_H + 2, 0);
     

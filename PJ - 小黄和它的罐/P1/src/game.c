@@ -15,11 +15,15 @@ void append(char* s, char c) {
     s[len+1] = '\0';
 }
 
-void initGame(Game *game) {
+Game *initGame(void) {
+    Game *game = (Game*)malloc(sizeof(Game));
     game->score = 0;
     game->moves = 0;
-    strcpy(game->hint1, "Game started! GL!");
+    game->jarsPicked = 0;
+    strcpy(game->hint1, GAME_MSGS[0]);
     strcpy(game->hint2, "");
+    
+    return game;
 }
 
 int run(Game *game, Map *map, Player *player) {
@@ -35,7 +39,7 @@ int run(Game *game, Map *map, Player *player) {
             strcpy(game->hint1, actionName[userIn - 1]);
             if(movePlayerRandom(map, player) == 0) {
                 game->score -= 5;
-                strcpy(game->hint2, "You've hit a wall!");
+                strcpy(game->hint2, GAME_MSGS[1]);
             }
             break;
         case 2:
@@ -43,7 +47,7 @@ int run(Game *game, Map *map, Player *player) {
             strcpy(game->hint1, actionName[userIn - 1]);
             if(movePlayerUp(map, player) == 0) {
                 game->score -= 5;
-                strcpy(game->hint2, "You've hit a wall!");
+                strcpy(game->hint2, GAME_MSGS[1]);
             }
             break;
         case 3:
@@ -51,7 +55,7 @@ int run(Game *game, Map *map, Player *player) {
             strcpy(game->hint1, actionName[userIn - 1]);
             if(movePlayerDown(map, player) == 0) {
                 game->score -= 5;
-                strcpy(game->hint2, "You've hit a wall!");
+                strcpy(game->hint2, GAME_MSGS[1]);
             }
             break;
         case 4:
@@ -59,7 +63,7 @@ int run(Game *game, Map *map, Player *player) {
             strcpy(game->hint1, actionName[userIn - 1]);
             if(movePlayerLeft(map, player) == 0) {
                 game->score -= 5;
-                strcpy(game->hint2, "You've hit a wall!");
+                strcpy(game->hint2, GAME_MSGS[1]);
             }
             break;
         case 5:
@@ -67,7 +71,7 @@ int run(Game *game, Map *map, Player *player) {
             strcpy(game->hint1, actionName[userIn - 1]);
             if(movePlayerRight(map, player) == 0) {
                 game->score -= 5;
-                strcpy(game->hint2, "You've hit a wall!");
+                strcpy(game->hint2, GAME_MSGS[1]);
             }
             break;
         case 6:
@@ -77,18 +81,19 @@ int run(Game *game, Map *map, Player *player) {
         case 7:
             if(pickUpJar(map, player)) {
                 game->score += 10;
-                strcpy(game->hint2, "Jar picked up!");
+                game->jarsPicked++;
+                strcpy(game->hint2, GAME_MSGS[2]);
             } else {
                 game->score -= 2;
-                strcpy(game->hint2, "No jar here!");
+                strcpy(game->hint2, GAME_MSGS[3]);
             }
             break;
         case 8:
-            strcpy(game->hint1, "Invalid keystroke!");
+            strcpy(game->hint1, GAME_MSGS[5]);
     }
     
     if(hasJar(map, player->y, player->x)) {
-        strcpy(game->hint2, "Squatting on a jar...");
+        strcpy(game->hint2, GAME_MSGS[4]);
     }
     
     return 0;

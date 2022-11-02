@@ -9,7 +9,7 @@
 
 #include "constants.h"
 
-const char WELCOME_MSG[2][STRLEN] = {
+const char WELCOME_MSGS[2][STRLEN] = {
     "PRESS A KEY",
     "TO START!"
 };
@@ -22,6 +22,15 @@ const char INSTRUCTION_MSGS[6][STRLEN] = {
     "E - Pick up | R - Random",
     "F - Stay/Skip | G - Exit",
     "[A] to ack",
+};
+
+const char GAME_MSGS[6][STRLEN] = {
+    "Game started! GL!",
+    "You've hit a wall! (-5)",
+    "Jar picked up! (+10)",
+    "No jar here! (-2)",
+    "Squatting on a jar...",
+    "Invalid keystroke!"
 };
 
 const int pDisplacement[4][2] = {

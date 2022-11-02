@@ -9,9 +9,12 @@
 
 #include "player.h"
 
-void initPlayer(Player *p) {
+Player *initPlayer(void) {
+    Player *p = (Player*)malloc(sizeof(Player));
     p->y = 1;
     p->x = 1;
+    
+    return p;
 }
 
 // return 0 if player exceeds wall bounds, aka hits a wall

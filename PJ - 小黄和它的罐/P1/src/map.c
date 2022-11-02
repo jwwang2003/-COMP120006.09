@@ -13,12 +13,14 @@
 // generate any whole number between 0 and 1
 // achieving a 50/50 chance of either
 int shouldJar(void) {
-    return randomIntProb(JAR_CHANCE, 0, 1) != 0;
+    return randomInt(0, 1);
 }
 
 // create a map with specified height and width
-void createMap(Map *map) {
+Map *createMap(void) {
+    Map *map = (Map*)malloc(sizeof(Map));
 //  initializing the grid
+    map->numJars = 0;
     map->grid = malloc(MAP_H * sizeof(*map->grid));
     
     for (int i = 0; i < MAP_H; ++i) {
@@ -29,12 +31,18 @@ void createMap(Map *map) {
                 map->grid[i][j] = 2;
             else if (j == 0 || j == MAP_W - 1)
                 map->grid[i][j] = 2;
-            else
+            else {
                 // since shouldJar returns 0 or 1, empty or jared respectively,
                 // just directly assign the return value to said node
-                map->grid[i][j] = shouldJar();
+                if(shouldJar() == 1) {
+                    map->grid[i][j] = 1;
+                    map->numJars++;
+                }
+            }
         }
     }
+    
+    return map;
 }
 
 int getNode(Map *map, int y, int x) {

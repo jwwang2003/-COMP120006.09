@@ -23,11 +23,12 @@
 typedef struct {
     int score;
     int moves;
+    int jarsPicked;
     char hint1[STRLEN];
     char hint2[STRLEN];
 } Game;
 
-void initGame(Game *game);
+Game *initGame();
 
 int run(Game *game, Map *map, Player *player);
 

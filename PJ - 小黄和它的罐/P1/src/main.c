@@ -26,31 +26,33 @@ int main(void) {
     
     initWindow();
         
-    int t = sizeof(WELCOME_MSG)/sizeof(WELCOME_MSG[0]);
-    splashScreenMsg(t, WELCOME_MSG);
+    int t = sizeof(WELCOME_MSGS)/sizeof(WELCOME_MSGS[0]);
+    splashScreenMsg(t, WELCOME_MSGS);
     getchar();
     
     t = sizeof(INSTRUCTION_MSGS)/sizeof(INSTRUCTION_MSGS[0]);
     splashScreenMsg(t, INSTRUCTION_MSGS);
     while (getchar() != 'a') { continue; };
     
-    Map map;
-    createMap(&map);
-    Player player;
-    initPlayer(&player);
-    Game game;
-    initGame(&game);
+    Map *map = createMap();
+    Player *player = initPlayer();
+    Game *game = initGame();
     
     do {
-        updateWindow(&game, &map, &player);
-    } while(run(&game, &map, &player) != -1);
+        updateWindow(game, map, player);
+    } while(run(game, map, player) != -1);
     
-    strcpy(game.hint1, "Final score ->");
-    strcpy(game.hint2, "");
+    strcpy(game->hint1, "Final score ->");
+    strcpy(game->hint2, "");
     
-    updateWindow(&game, &map, &player);
+    updateWindow(game, map, player);
     t = (int)strlen(GAMEOVER_MSG);
     showGameOver(t, GAMEOVER_MSG);
+    
+    // cleanup
+    free(map);
+    free(player);
+    free(game);
     
     return 0;
 }

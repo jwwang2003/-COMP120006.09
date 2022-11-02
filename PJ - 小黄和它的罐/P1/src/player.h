@@ -21,7 +21,7 @@ typedef struct {
     int x;
 } Player;
 
-void initPlayer(Player *player);
+Player *initPlayer(void);
 
 int movePlayerRandom(Map *m, Player *p);
 int movePlayerUp(Map *m, Player *p);
