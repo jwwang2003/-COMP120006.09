@@ -23,9 +23,7 @@ extern const char GAME_MSGS[6][STRLEN];
 // therefore the grid must be 2 units more on
 // both axis to allow for a 10x10 playable space
 #define MAP_H 12
-#define MAP_W 22
-
-#define WALL_THICKNESS 1
+#define MAP_W 12
 
 // player displacement coordinates
 extern const int pDisplacement[4][2];
