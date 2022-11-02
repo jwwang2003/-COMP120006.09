@@ -12,6 +12,7 @@
     "type_traits": "c",
     "__tuple": "c",
     "array": "c",
-    "sstream": "c"
+    "sstream": "c",
+    "game.h": "c"
   }
 }
