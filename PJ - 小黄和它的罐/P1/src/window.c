@@ -75,10 +75,7 @@ char *getSymbol(int i) {
     }
 }
 
-void updateWindow(Game *game, Map *map, Player *player) {
-    clear();
-    move(0,0);
-    
+void printMap(Map *map, Player *player) {
     for(int i = 0; i < MAP_H; ++i) {
         for(int j = 0; j < MAP_W; ++j) {
             mvprintw(i, j * 2, getSymbol(map->grid[i][j]));
@@ -86,6 +83,13 @@ void updateWindow(Game *game, Map *map, Player *player) {
     }
     
     mvprintw(player->y, player->x * 2, "!");
+}
+
+void updateWindow(Game *game, Map *map, Player *player) {
+    clear();
+    move(0,0);
+    
+    printMap(map, player);
     
     int h1Len = (int)strlen(game->hint1);
     int h2Len = (int)strlen(game->hint2);
@@ -99,7 +103,7 @@ void updateWindow(Game *game, Map *map, Player *player) {
     mvprintw(MAP_H + 2, hLen, "Jars collected: %d", game->jarsPicked);
     mvprintw(MAP_H + 3, hLen, "Jars stat: %d/%d (%d)", map->numJars - game->jarsPicked, (MAP_H - 2)*(MAP_W - 2), map->numJars);
     
-    move(MAP_H + 2, 0);
+    move(MAP_H + 4, 0);
     
     refresh();
     
@@ -116,7 +120,7 @@ void showGameOver(int len, const char c[STRLEN]) {
     
     // move cursor to the middle and print game over text
     mvprintw(0, (windowWidth - len) / 2, c);
-    move(MAP_H + 2, 0); // move cursor back to the last line
+    move(MAP_H + 4, 0); // move cursor back to the last line
     
     refresh();  // flush output to the actual terminal
     

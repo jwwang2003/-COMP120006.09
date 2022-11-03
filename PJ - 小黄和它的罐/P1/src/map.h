@@ -22,7 +22,6 @@ typedef struct {
 //    int width;          // width of grid (x axis)
 } Map;
 
-int randomInt(int a, int b);
 int shouldJar(void);
 Map *createMap(void);
 int getNode(Map *map, int y, int x);

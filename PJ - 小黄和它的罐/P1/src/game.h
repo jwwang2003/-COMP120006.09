@@ -28,8 +28,7 @@ typedef struct {
     char hint2[STRLEN];
 } Game;
 
-Game *initGame();
-
+Game *initGame(void);
 int run(Game *game, Map *map, Player *player);
 
 //void showWelcome(int h, int w);

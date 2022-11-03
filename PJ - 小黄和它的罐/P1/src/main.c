@@ -54,5 +54,7 @@ int main(void) {
     free(player);
     free(game);
     
+    getch();
+    
     return 0;
 }
